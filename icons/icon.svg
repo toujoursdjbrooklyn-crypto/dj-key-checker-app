@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">DJ Key Checker icon</title>
+  <desc id="desc">Dark square app icon with cyan DJ Key Checker initials and musical note.</desc>
+  <rect width="512" height="512" rx="112" fill="#07090f"/>
+  <circle cx="256" cy="256" r="196" fill="#111827" stroke="#22d3ee" stroke-width="18"/>
+  <path d="M326 136v190a54 54 0 1 1-28-47V180l-110 24v146a54 54 0 1 1-28-47V180l166-44Z" fill="#67e8f9"/>
+  <text x="256" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#f8fafc">KEY</text>
+</svg>

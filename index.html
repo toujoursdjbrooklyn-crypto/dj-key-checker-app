@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DJ Key Checker">
+  <meta name="description" content="A mobile-first offline PWA for checking musical keys by ear with reference tones and Camelot notation.">
+  <title>DJ Key Checker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <p class="eyebrow">Offline PWA</p>
+    <h1>DJ Key Checker</h1>
+    <p class="tagline">Tap a note to check a track's key against your ears.</p>
+  </header>
+
+  <main>
+    <section class="panel status-panel" aria-live="polite">
+      <div>
+        <span class="label">Now playing</span>
+        <strong id="current-note">Nothing</strong>
+      </div>
+      <button id="stop-button" class="danger-button" type="button">Stop</button>
+    </section>
+
+    <section class="panel controls" aria-label="Tone controls">
+      <label>
+        Octave
+        <select id="octave-select">
+          <option value="3">Low</option>
+          <option value="4" selected>Middle</option>
+          <option value="5">High</option>
+        </select>
+      </label>
+      <label>
+        Sound
+        <select id="sound-select">
+          <option value="soft" selected>Soft synth</option>
+          <option value="piano">Piano-like tone</option>
+        </select>
+      </label>
+      <label>
+        Mode
+        <select id="mode-select">
+          <option value="momentary" selected>Momentary</option>
+          <option value="sustain">Sustain</option>
+        </select>
+      </label>
+      <label class="volume-control">
+        Volume <span id="volume-value">45%</span>
+        <input id="volume-slider" type="range" min="0" max="100" value="45">
+      </label>
+    </section>
+
+    <section class="note-grid" aria-label="Reference tones">
+      <button class="note-button" type="button" data-note="1A" style="--key-color: #55eadc;">
+        <span class="camelot-key">1A</span>
+        <span class="traditional-key">G#/Ab minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="2A" style="--key-color: #8ff0b6;">
+        <span class="camelot-key">2A</span>
+        <span class="traditional-key">D#/Eb minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="3A" style="--key-color: #b9f58b;">
+        <span class="camelot-key">3A</span>
+        <span class="traditional-key">A#/Bb minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="4A" style="--key-color: #ffe08a;">
+        <span class="camelot-key">4A</span>
+        <span class="traditional-key">F minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="5A" style="--key-color: #ffbf99;">
+        <span class="camelot-key">5A</span>
+        <span class="traditional-key">C minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="6A" style="--key-color: #ff9a93;">
+        <span class="camelot-key">6A</span>
+        <span class="traditional-key">G minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="7A" style="--key-color: #f58bb8;">
+        <span class="camelot-key">7A</span>
+        <span class="traditional-key">D minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="8A" style="--key-color: #d99af9;">
+        <span class="camelot-key">8A</span>
+        <span class="traditional-key">A minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="9A" style="--key-color: #c6b4ff;">
+        <span class="camelot-key">9A</span>
+        <span class="traditional-key">E minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="10A" style="--key-color: #b7d4ff;">
+        <span class="camelot-key">10A</span>
+        <span class="traditional-key">B minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="11A" style="--key-color: #86d8ff;">
+        <span class="camelot-key">11A</span>
+        <span class="traditional-key">F#/Gb minor</span>
+      </button>
+      <button class="note-button" type="button" data-note="12A" style="--key-color: #5fe7f0;">
+        <span class="camelot-key">12A</span>
+        <span class="traditional-key">C#/Db minor</span>
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Install from Safari with Share → Add to Home Screen. Audio starts only after your first tap for iPhone compatibility.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
